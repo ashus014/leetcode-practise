@@ -1,9 +1,7 @@
-package src;
+package src.leetCodeProblems;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Day004 {
 

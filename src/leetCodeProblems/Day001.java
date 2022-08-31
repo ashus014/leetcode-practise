@@ -1,4 +1,4 @@
-package src;
+package src.leetCodeProblems;
 
 public class Day001 {
 
