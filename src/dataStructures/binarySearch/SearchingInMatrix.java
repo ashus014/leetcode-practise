@@ -1,6 +1,5 @@
 package src.dataStructures.binarySearch;
 
-import java.util.Arrays;
 
 public class SearchingInMatrix {
     

@@ -7,12 +7,12 @@ public class Day004 {
 
     public boolean canConstruct(String ransomNote, String magazine) {
 
-        ArrayList<Character> subSet = new ArrayList();
+        ArrayList<Character> subSet = new ArrayList<>();
         for (int i=0 ; i<ransomNote.length(); i++) {
             subSet.add(ransomNote.charAt(i));
         }
 
-        ArrayList<Character> set = new ArrayList();
+        ArrayList<Character> set = new ArrayList<>();
         for (int i=0 ; i<magazine.length(); i++) {
             set.add(magazine.charAt(i));
         }
