@@ -26,7 +26,7 @@ public class Problem645 {
 
         cyclicSort(nums);
         List<Integer> tempAnswer = new ArrayList<>();
-        for(int i=0, j=0; i<nums.length; i++) {
+        for(int i=0; i<nums.length; i++) {
             if(nums[i]-1 != i) {
                 tempAnswer.add(nums[i]);
                 tempAnswer.add(i+1);
