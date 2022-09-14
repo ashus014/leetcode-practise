@@ -5,17 +5,17 @@ public class RecursionExamples {
 
     public static void main(String[] args) {
         
-        printNUmbers(1);
+        printNUmbers(5);
 
     }
 
     static void printNUmbers(int number) {
 
-        if(number > 5)
+        if(number == 0)
         {
             return;
         }
-        System.out.println(number + " - ");
-        printNUmbers(number+1);
+        System.out.println(number);
+        printNUmbers(number-1);
     }
 }
