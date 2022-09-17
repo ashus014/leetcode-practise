@@ -4,7 +4,13 @@ public class Factorial {
     public static void main(String[] args) {
         
         // System.out.println(factorial(5));
-        System.out.println(sumOfNumbers(1234));
+        // System.out.println(reverseNumber(1234));
+
+        //Find total number of Digits
+        int totalNumberOfDigits = (int) (Math.log10(1234)+ 1);
+        // System.out.println(totalNumberOfDigits);
+
+        System.out.println(12 * (int)Math.pow(10, 2));
 
     }
 
@@ -26,4 +32,17 @@ public class Factorial {
         }
         return (number % 10) + sumOfNumbers(number / 10);
     }
+
+    // Reverse a number
+    public static int reverseNumber(int number) {
+
+        if (number % 10 == number) {
+            return number;
+        }
+
+        int temp = number % 10;
+        return  10*temp + reverseNumber(number / 10);
+    }
+
+
 }
