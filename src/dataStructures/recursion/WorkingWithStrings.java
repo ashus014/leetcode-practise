@@ -8,6 +8,9 @@ public class WorkingWithStrings {
         //System.out.println(removeCharacter("baccab", 'b'));
 
         //approach 2
+        // System.out.println(skipApple("applestrapplestrapple"));
+
+        System.out.println(skipAppNotApple("appleashu"));
 
     }
 
@@ -46,4 +49,35 @@ public class WorkingWithStrings {
             return ch + skip(str.substring(1));
         }
     }
+
+    //skip "apple"
+    public static String skipApple(String str) {
+
+        if(str.isEmpty()) {
+            return "";
+        }
+
+        if(str.startsWith("apple")) {
+            return skipApple(str.substring(5));
+        }
+        else {
+            return str.charAt(0) + skipApple(str.substring(1));
+        }
+    }
+
+    //skip "app" not "apple"
+    public static String skipAppNotApple(String str) {
+
+        if(str.isEmpty()) {
+            return "";
+        }
+
+        if(str.startsWith("app") && !str.startsWith("apple")) {
+            return skipAppNotApple(str.substring(3));
+        }
+        else {
+            return str.charAt(0) + skipAppNotApple(str.substring(1));
+        }
+    }
+      
 }
