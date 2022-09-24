@@ -1,8 +1,7 @@
 package src.dataStructures.recursion;
 
-import java.nio.file.Path;
+import java.util.Arrays;
 
-import javax.swing.plaf.BorderUIResource.EtchedBorderUIResource;
 
 public class MazeProblems {
     
@@ -14,7 +13,8 @@ public class MazeProblems {
             {true, true, true},
             {true, true, true}
         };
-        printPathsWithRiverWithBackTracking("", board, 0, 0);
+        // printPathsWithRiverWithBackTracking("", board, 0, 0);
+        allPathPrint("", board, 0, 0, new int[3][3], 1);
     }
 
     // going from (0,0) to (2,2) : Possible ways to reach
@@ -68,7 +68,43 @@ public class MazeProblems {
             printPathsWithRiverWithBackTracking(s+'L', maze, r, c-1);
         }
         //now the function is getting over
-        //remove the changes that I have made
+        //remove the changes that you have made
         maze[r][c] = true;
+    }
+
+    // Print all the possible paths
+    static void allPathPrint(String s, Boolean[][]maze,int r, int c, int[][]path, int step) {
+        if(r == maze.length - 1 && c == maze[0].length - 1) {
+            path[r][c] = step;
+            for(int[] arr : path) {
+                System.out.println(Arrays.toString(arr));
+            }
+            System.out.println();
+            return;
+        }
+        
+        if(!maze[r][c]) {
+            return;
+        }
+
+        maze[r][c] = false;
+
+        path[r][c] = step;
+
+        if(r < maze.length - 1) {
+            allPathPrint(s+'D', maze, r+1, c, path, step+1);
+        }
+        if(c < maze[0].length - 1) {
+            allPathPrint(s+'R', maze, r, c+1, path, step+1);
+        }
+        if(r > 0) {
+            allPathPrint(s+'U', maze, r-1, c, path, step+1);
+        }
+        if(c > 0) {
+            allPathPrint(s+'L', maze, r, c-1, path, step+1);
+        }
+       
+        maze[r][c] = true;
+        path[r][c] = 0;
     }
 }
