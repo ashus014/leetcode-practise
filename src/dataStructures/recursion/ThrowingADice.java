@@ -4,7 +4,7 @@ public class ThrowingADice {
     
 
     public static void main(String[] args) {
-        dice("", 4);
+        dice("", 5);
     }
 
     static void dice(String p, int target) {
