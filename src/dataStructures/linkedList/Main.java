@@ -12,8 +12,9 @@ public class Main {
         lDemo.insertLast(6);
         lDemo.insert(5, 4);
         lDemo.insertFirst(0);
-
         lDemo.display();
-
+        System.out.println("\n" + lDemo.deleteFirst());
+        System.out.println(lDemo.deleteFirst());
+        lDemo.display();
     }
 }
