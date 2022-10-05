@@ -89,7 +89,19 @@ public class LinkedListDemo {
         }
     }
 
+    // // Inserting value with recursion
+    // public void insertRec(int val, int index) {
 
+    // }
+
+    // private Node insertRec(int val, int index, Node node) {
+    //     if(index == 0) {
+    //         Node temp = new Node(val, node);
+    //         size++;
+    //         return temp;
+    //     }
+    //     insertRec(val, index++, node)
+    // }
     
 
     
