@@ -1,6 +1,5 @@
 package src.dataStructures.recursion;
 import java.util.ArrayList;
-import java.util.Arrays;
 public class SubsetQuestions {
     
     public static void main(String[] args) {
