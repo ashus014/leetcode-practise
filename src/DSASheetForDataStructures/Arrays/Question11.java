@@ -1,7 +1,6 @@
 package src.DSASheetForDataStructures.Arrays;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // https://practice.geeksforgeeks.org/problems/find-duplicates-in-an-array/1
 public class Question11 {
