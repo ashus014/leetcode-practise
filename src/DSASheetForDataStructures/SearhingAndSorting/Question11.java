@@ -7,18 +7,15 @@ public class Question11 {
         System.out.println(FindMaxSum(a, a.length));
     }
 
-    static public int FindMaxSum(int arr[], int n)
+    static public int FindMaxSum(int arr[], int nlen)
     {
         // Your code here
-        int sum1 = arr[0];
-        int sum2 = 0;
-        int result;
-
-        for (int i = 1; i < n; i++){
-            result = (sum1 > sum2) ? sum1 : sum2;
-            sum1 = sum2 + arr[i];
-            sum2 = result;
-        }
-        return ((sum1 > sum2) ? sum1 : sum2);
+        int rob1=0, rob2=0;
+         for(int n : arr) {
+             int temp = Math.max(n+rob1, rob2);
+             rob1 = rob2;
+             rob2 = temp;
+         }
+         return rob2;
     }
 }
