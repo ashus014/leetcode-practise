@@ -3,7 +3,7 @@ package src.DSASheetForDataStructures.SearhingAndSorting;
 public class Question11 {
     public static void main(String[] args) {
         
-        int a[] = {5,5,10,100,10,5};
+        int a[] = {1,2,3,1,5};
         System.out.println(FindMaxSum(a, a.length));
     }
 
