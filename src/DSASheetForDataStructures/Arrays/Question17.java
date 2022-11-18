@@ -1,7 +1,6 @@
 package src.DSASheetForDataStructures.Arrays;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // https://practice.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1
 
@@ -10,11 +9,9 @@ import java.util.List;
 
 public class Question17 {
 
-    private static final int MAX_VALUE = Integer.MAX_VALUE;
-
     public static void main(String[] args) {
-        // int[] arr = { 100, 180, 260, 310, 40, 535, 695 };
-        int[] arr = { 4, 2, 2, 2, 4, 2 };
+        int[] arr = { 100, 180, 260, 310, 40, 535, 695 };
+        // int[] arr = { 4, 2, 2, 2, 4, 2 };
         System.out.println(stockBuySell(arr, arr.length));
     }
 
@@ -23,20 +20,33 @@ public class Question17 {
 
         ArrayList<ArrayList<Integer>> resulList = new ArrayList<>();
         int high = -1;
-        int low = MAX_VALUE;
+        int low = Integer.MAX_VALUE;
 
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n; i++) {
             if (A[i] < low) {
                 low = A[i];
                 continue;
             }
-            if (A[i] > A[i + 1]) {
-                high = A[i];
-                ArrayList<Integer> temp = new ArrayList<>();
-                temp.add(low);
-                temp.add(high);
-                resulList.add(temp);
-                low = MAX_VALUE;
+
+            if (A[i] > low) {
+
+                if (i == n - 1) {
+                    if (A[i] > A[i - 1]) {
+                        high = A[i];
+                        ArrayList<Integer> temp = new ArrayList<>();
+                        temp.add(low);
+                        temp.add(high);
+                        resulList.add(temp);
+                        low = Integer.MAX_VALUE;
+                    }
+                } else if (A[i] > A[i + 1]) {
+                    high = A[i];
+                    ArrayList<Integer> temp = new ArrayList<>();
+                    temp.add(low);
+                    temp.add(high);
+                    resulList.add(temp);
+                    low = Integer.MAX_VALUE;
+                }
             }
         }
 
