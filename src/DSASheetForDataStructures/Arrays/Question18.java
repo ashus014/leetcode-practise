@@ -21,11 +21,10 @@ public class Question18 {
 
     private static int helper(int[] arr, int n, int k, int pair) {
 
-        if (k == 0)
+        if (k == 0 && pair == 0)
             return 1;
         if (pair == 0)
             return 0;
-
         if (n == 0 || k < 0)
             return 0;
 
