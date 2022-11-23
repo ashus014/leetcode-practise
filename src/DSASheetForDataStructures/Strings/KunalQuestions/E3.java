@@ -1,7 +1,5 @@
 package src.DSASheetForDataStructures.Strings.KunalQuestions;
 
-import java.util.ArrayList;
-
 // Generate all possible permutations
 // abc (3!) = abc, acb, bac, bca, cba, cab
 public class E3 {
