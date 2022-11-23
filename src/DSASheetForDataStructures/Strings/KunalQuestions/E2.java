@@ -3,6 +3,7 @@ package src.DSASheetForDataStructures.Strings.KunalQuestions;
 import java.util.ArrayList;
 
 // Generate all possible subsequence of a string
+// abc = 'a' 'b' 'c' 'ab' 'ac' 'bc' 'abc'
 public class E2 {
 
     public static void main(String[] args) {
