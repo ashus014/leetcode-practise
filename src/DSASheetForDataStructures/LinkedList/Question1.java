@@ -37,11 +37,9 @@ public class Question1 {
 
     // Recursive Approach
     static Node reverseListWithRecursion(Node head) {
-
         if (head == null || head.next == null) {
             return head;
         }
-
         Node newhead = reverseListWithRecursion(head.next);
         Node headNext = head.next;
         headNext.next = head;
