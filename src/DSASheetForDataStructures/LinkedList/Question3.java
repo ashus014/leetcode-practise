@@ -33,7 +33,6 @@ public class Question3 {
         if (head == null || head.next == null) {
             return false;
         }
-        Node temp = head;
 
         Node oneStep = head;
         Node twoStep = head;
