@@ -6,7 +6,7 @@ import java.util.Collections;
 public class PrintAllSubstring {
 
     public static void main(String[] args) {
-        String ashu = "klrwqaozmixrpifeffeclhbv fukbyeqfqojwtwosileeztxwjl";
+        String ashu = "klrwqaozmixrpifeffeclhbvfukbyeqfqojwtwosileeztxwjl";
         // ArrayList<String> result = subsequence("", ashu);
         ArrayList<String> result = new ArrayList<>();
 
@@ -19,6 +19,6 @@ public class PrintAllSubstring {
             }
         }
         Collections.sort(result);
-        System.out.println(result);
+        System.out.println(result.get(result.size() - 1));
     }
 }

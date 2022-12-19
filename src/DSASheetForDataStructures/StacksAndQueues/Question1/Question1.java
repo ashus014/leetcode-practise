@@ -1,7 +1,5 @@
 package src.DSASheetForDataStructures.StacksAndQueues.Question1;
 
-import src.leetCodeProblems.Day004;
-
 // Implement Custom Stack form scratch
 
 public class Question1 {
@@ -27,5 +25,6 @@ public class Question1 {
         s1.push(55);
         // s1.push(66);
         System.out.println(s1.data.length);
+
     }
 }

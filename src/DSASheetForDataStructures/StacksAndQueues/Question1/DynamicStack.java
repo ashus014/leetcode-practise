@@ -1,9 +1,5 @@
 package src.DSASheetForDataStructures.StacksAndQueues.Question1;
 
-import javax.print.attribute.standard.Sides;
-
-import apple.laf.JRSUIConstants.Size;
-
 public class DynamicStack extends CustomeStack {
 
     public DynamicStack() {
