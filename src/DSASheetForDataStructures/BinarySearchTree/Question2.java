@@ -68,6 +68,8 @@ public class Question2 {
     }
 
     // successor code is not the optimal code
+    // this only works in third case of delete...
+    // not a generic function that works anywhere.
     private static Node getSuccessor(Node root) {
         Node curr = root.right;
         while (curr != null && curr.left != null) {
