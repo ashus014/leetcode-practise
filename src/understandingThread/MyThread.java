@@ -2,13 +2,11 @@ package src.understandingThread;
 
 public class MyThread extends Thread {
 
-    // Defining a thread
+    public void start() {
+        System.out.println("Start Method");
+    }
+
     public void run() {
-
-        // Job of thread
-        for(int i=0; i<10; i++) {
-            System.out.println("Child Thread");
-        }
-
+        System.out.println("Run Method");
     }
 }
