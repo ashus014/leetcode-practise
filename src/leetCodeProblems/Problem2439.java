@@ -1,0 +1,15 @@
+package src.leetCodeProblems;
+
+public class Problem2439 {
+
+    public int minimizeArrayValue(int[] nums) {
+        long ans=0;
+        long s=0;
+        for(int i=0;i<nums.length;i++){
+            s+=nums[i];
+            ans=Math.max(ans,(s+i)/(i+1));
+        }
+        return (int)ans;
+    }
+
+}

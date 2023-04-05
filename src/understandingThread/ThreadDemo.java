@@ -7,5 +7,6 @@ public class ThreadDemo {
         MyThread t = new MyThread();
         t.start();
         System.out.println("Main method");
+        t.start();
     }
 }
