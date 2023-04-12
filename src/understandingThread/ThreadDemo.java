@@ -25,6 +25,12 @@ public class ThreadDemo {
          *
          * */
 
+        /**
+         * public final void join() throws InterruptedException
+         * public final void join(long milliSecs) InterruptedException
+         * public final void join(long milliSecs, int nanoSecs) InterruptedException
+         *
+         * */
 
     }
 }

@@ -4,14 +4,19 @@ public class Test {
 
     public static void main(String[] args) {
 
-        System.out.println(Thread.currentThread().getName());
-        // Prints : main
-        MyThread t= new MyThread();
-        System.out.println(t.getName());
-        // Prints default Name provided by JVM : Thread-0
+        MyThread t = new MyThread();
+        t.setPriority(10);
+        t.start();
+        System.out.println(t.getPriority());
+        System.out.println(Thread.currentThread().getPriority());
 
-        Thread.currentThread().setName("Ashu Singh");
-        System.out.println(Thread.currentThread().getName());
-        // Prints : Ashu Singh
+        for(int i=0; i<10; i++) {
+            System.out.println("Main Thread");
+        }
     }
+
+    /**
+     * public static native void yield();
+     *
+     * */
 }
