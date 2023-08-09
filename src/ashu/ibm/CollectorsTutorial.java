@@ -56,6 +56,13 @@ public class CollectorsTutorial {
 
 //        Optional<String> collectMax = givenList.stream()
 //                .collect(maxBy(Comparator.naturalOrder()));
+
+//        String n = givenList.stream()
+//                .sorted(Comparator.reverseOrder())
+//                .findFirst()
+//                .orElse("nothing here");
+//        System.out.println(n);
+
 //
 //        Optional<String> collectMin = givenList.stream()
 //                .collect(minBy(Comparator.naturalOrder()));
@@ -66,19 +73,19 @@ public class CollectorsTutorial {
 
         //GroupingBy collector is used for grouping objects
         // by some property, and then storing the results in a Map instance.
-//        Map<Integer, Set<String>> collect = givenList.stream()
-//                .collect(groupingBy(String::length, toSet()));
-//
-//        System.out.println(collect);
+        Map<Integer, Set<String>> collect = givenList.stream()
+                .collect(groupingBy(String::length, toSet()));
+
+        System.out.println(collect);
 
         //PartitioningBy is a specialized case of groupingBy that accepts a
         // Predicate instance, and then collects Stream elements into a Map
         // instance that stores Boolean values as keys and collections as values.
 
-        Map<Boolean, List<String>> result = givenList.stream()
-                .collect(partitioningBy(s -> s.length() > 2));
-
-        System.out.println(result);
+//        Map<Boolean, List<String>> result = givenList.stream()
+//                .collect(partitioningBy(s -> s.length() > 2));
+//
+//        System.out.println(result);
 
 
     }
