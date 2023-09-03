@@ -7,12 +7,12 @@ public class Problem9_PrintSubSequenceWithSum {
 
     public static void main(String[] args) {
 
-        printSubsequenceSumOnce(0,
-                new ArrayList<>(),
-                new ArrayList<>(Arrays.asList(1,2,1)),
+        int printSubsequenceCount = printSubsequenceCount(0,
+                new ArrayList<>(Arrays.asList(1, 2, 1)),
                 3,
-                2 ,
+                2,
                 0);
+        System.out.println(printSubsequenceCount);
     }
 
     private static void printSubsequenceSum(int ind, ArrayList<Integer> ds, ArrayList<Integer> arr, int n, int sum,int s) {
@@ -30,12 +30,33 @@ public class Problem9_PrintSubSequenceWithSum {
         printSubsequenceSum(ind + 1, ds, arr, n, sum, s);
     }
 
-    private static boolean printSubsequenceSumOnce(int ind,
-                                                ArrayList<Integer> ds,
+    private static int printSubsequenceCount(int ind,
                                                 ArrayList<Integer> arr,
                                                 int n,
                                                 int sum,
                                                 int s) {
+        if(ind == n) {
+            // condition satisfied
+            if(s == sum) {
+                return 1;
+            }
+            // condition not satisfied
+            return 0;
+        }
+        s += arr.get(ind);
+        int l = printSubsequenceCount(ind + 1, arr, n, sum, s);
+        s -= arr.get(ind);
+        int r = printSubsequenceCount(ind + 1, arr, n, sum, s);
+
+        return l + r;
+    }
+
+    private static boolean printSubsequenceSumOnce(int ind,
+                                                   ArrayList<Integer> ds,
+                                                   ArrayList<Integer> arr,
+                                                   int n,
+                                                   int sum,
+                                                   int s) {
         if(ind == n) {
             // condition satisfied
             if(s == sum) {
