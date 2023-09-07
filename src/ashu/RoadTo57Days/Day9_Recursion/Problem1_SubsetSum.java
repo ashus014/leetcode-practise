@@ -1,4 +1,4 @@
-package src.ashu.RoadTo57LPA.Day9_Recursion;
+package src.ashu.RoadTo57Days.Day9_Recursion;
 
 //        Problem Statement: Given an array print all the sum of the subset
 //        generated from it, in the increasing order.

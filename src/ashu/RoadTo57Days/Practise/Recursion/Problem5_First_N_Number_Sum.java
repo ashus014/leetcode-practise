@@ -1,4 +1,4 @@
-package src.ashu.RoadTo57LPA.Practise.Recursion;
+package src.ashu.RoadTo57Days.Practise.Recursion;
 
 public class Problem5_First_N_Number_Sum {
 

@@ -1,6 +1,5 @@
-package src.ashu.RoadTo57LPA.Practise.Recursion;
+package src.ashu.RoadTo57Days.Practise.Recursion;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Problem6_Reverse_Array {

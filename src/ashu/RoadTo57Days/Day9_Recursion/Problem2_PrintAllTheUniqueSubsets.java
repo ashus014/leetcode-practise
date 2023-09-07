@@ -1,4 +1,4 @@
-package src.ashu.RoadTo57LPA.Day9_Recursion;
+package src.ashu.RoadTo57Days.Day9_Recursion;
 
 //        Problem Statement: Given an array of integers that may contain duplicates the
 //        task is to return all possible subsets. Return only unique subsets and they can be in any order.
