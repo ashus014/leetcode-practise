@@ -1,0 +1,11 @@
+package src.interviewPractise.practise;
+
+public class Problem1 {
+
+    public static void main(String[] args) {
+
+
+        int[] arr = {1,2,3};
+//        System.out.println(permute(arr));
+    }
+}

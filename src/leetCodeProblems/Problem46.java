@@ -31,7 +31,7 @@ public class Problem46 {
         nums[j] = temp;
     }
 
-    public static List<List<Integer>> permute(int[] nums) {
+    private static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         recurPermute(0, nums, ans);
         return ans;
