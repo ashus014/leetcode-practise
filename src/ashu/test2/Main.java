@@ -1,94 +1,32 @@
-package src.ashu.test2; /******************************************************************************
+package src.ashu.test2;
 
- Welcome to GDB Online.
- GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
- C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
- Code, Compile, Run and Debug online from anywhere in world.
+public class Main {
+    public static String longestSubstringWithTwoDistinctChars(String str) {
+        int left = 0, right = 0, maxLen = 0, start = 0, distinctCount = 0;
+        int[] lastIndex = new int[256]; // Store the last index of each character
 
- *******************************************************************************/
-import java.util.*;
+        while (right < str.length()) {
+            char rightChar = str.charAt(right);
+            if (lastIndex[rightChar] == 0) distinctCount++;
+            lastIndex[rightChar] = right + 1;
 
-public class Main
-{
-    public static void main(String[] args) {
-        DeckOfCards deck = new DeckOfCards();
-        //System.out.println(deck.toString());
-
-        System.out.println(sortCards(deck.cards).toString());
-
-        Card first = deck.cards.get(2);
-        Card second =  deck.cards.get(10);
-        System.out.println("first - " + first + " second - " + second + " bigger - " + findBiggerCard(first, second).toString());
-    }
-
-    public static ArrayList<Card> sortCards(ArrayList<Card> cards){
-        //TODO logic
-        return cards;
-    }
-
-    public static Card findBiggerCard(Card first, Card second){
-        //TODO logic
-        return first;
-    }
-}
-
-class DeckOfCards {
-
-    protected final ArrayList<Card> cards;
-    public DeckOfCards() {
-        Suit[] suits = Suit.values();
-        Rank[] ranks = Rank.values();
-        cards = new ArrayList<Card>();
-        for (int i = 0; i<suits.length; i++) {
-            for(int j=0; j<ranks.length; j++){
-                this.cards.add(new Card(suits[i], ranks[j]));
+            while (distinctCount > 2) {
+                char leftChar = str.charAt(left);
+                if (lastIndex[leftChar] == left + 1) distinctCount--;
+                left++;
             }
+            if (right - left + 1 > maxLen) {
+                maxLen = right - left + 1;
+                start = left;
+            }
+            right++;
         }
-        //Shuffle after the creation
-        Collections.shuffle(this.cards);
+        return str.substring(start, start + maxLen);
     }
 
-    public String toString(){
-        return cards.toString();
+    public static void main(String[] args) {
+        String str = "neceba";
+        String longestSubstr = longestSubstringWithTwoDistinctChars(str);
+        System.out.println(longestSubstr); // Output: "ece"
     }
 }
-
-enum Suit {
-    CLUBS,
-    DIAMONDS,
-    HEARTS,
-    SPADES;
-}
-
-class Card {
-
-    private Suit suit;
-    private Rank rank;
-
-    public Card(Suit suit, Rank rank) {
-        this.suit = suit;
-        this.rank = rank;
-    }
-
-    public String toString(){
-        return "card " + suit + " " + rank;
-    }
-
-}
-
-enum Rank {
-    TWO,
-    THREE,
-    FOUR,
-    FIVE,
-    SIX,
-    SEVEN,
-    EIGHT,
-    NINE,
-    TEN,
-    JACK,
-    QUEEN,
-    KING,
-    ACE;
-}
-
