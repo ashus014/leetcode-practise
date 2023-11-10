@@ -9,7 +9,6 @@ public class Problem23_K_th_Permutation {
         System.out.println(getPermutation(4, 17));
     }
 
-
     public static String getPermutation(int n, int k) {
         int fact = 1;
         List<Integer> numbers = new ArrayList<>();
@@ -17,7 +16,6 @@ public class Problem23_K_th_Permutation {
             fact = fact * i;
             numbers.add(i);
         }
-
         numbers.add(n);
         String ans = "";
         k = k - 1;
