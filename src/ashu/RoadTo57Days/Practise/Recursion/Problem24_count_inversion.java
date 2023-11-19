@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Problem24_count_inversion {
 
-    private static int count  = 0;
+//    private static int count  = 0;
     public static void main(String[] args) {
 
         int[] arr = {5,3,2,4,1};
@@ -35,20 +35,21 @@ public class Problem24_count_inversion {
     // Optimal Approach
 
     private static int numberOfInversions(int[] arr) {
-        mergeSort(arr, 0, arr.length - 1);
+        return mergeSort(arr, 0, arr.length - 1);
+    }
+
+    private static int mergeSort(int[] arr, int low, int high) {
+        int count = 0;
+        if (low >= high)
+            return count;
+        int mid = (low + high) / 2;
+        count += mergeSort(arr, low, mid); // left half
+        count += mergeSort(arr, mid + 1, high); // right half
+        count += merge(arr, low, mid, high); // merging sorted halves
         return count;
     }
 
-    private static void mergeSort(int[] arr, int low, int high) {
-        if (low >= high) return;
-        int mid = (low + high) / 2;
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid + 1, high);
-        merge(arr, low, mid, high);
-
-    }
-
-    private static void merge(int[] arr, int low, int mid, int high) {
+    private static int merge(int[] arr, int low, int mid, int high) {
 
         List<Integer> temp = new ArrayList<>();
         // First Pointer
@@ -56,6 +57,9 @@ public class Problem24_count_inversion {
 
         // second pointer
         int right = mid + 1;
+
+        // keeping a count varibale
+        int count = 0;
 
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {
@@ -86,5 +90,7 @@ public class Problem24_count_inversion {
         for (int i = low; i <= high; i++) {
             arr[i] = temp.get(i - low);
         }
+
+        return count;
     }
 }
