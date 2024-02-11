@@ -8,7 +8,7 @@ public class Problem1 {
 
     public static void main(String[] args) {
 
-        int[] arr1 = {1, 1, 2, 3, 3, 4, 5};
+        int[] arr1 = {3, 3, 3, 3, 3, 4, 5};
         int[] arr2 = {2, 3, 3, 4, 4, 5};
 
 //        System.out.println("The union of two arrays :: " + findUnionOfArrays(arr1, arr2));
@@ -65,6 +65,8 @@ public class Problem1 {
             if(a[i] == b[j]){
                 result.add(a[i]);
                 i++;
+                j++;
+            } else if(a[i] > b[j]){
                 j++;
             } else {
                 i++;
